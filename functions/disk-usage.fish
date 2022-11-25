@@ -31,7 +31,7 @@ function _disk-usage-pad
   else
     set text $argv
   end
-  echo -n "$text" | ansi-length | read -l len
+  echo -n $text | ansi-length | read -l len
   set -l pad (dim)(string repeat -n (math $_flag_width - $len) "$_flag_char")(no-dim)
   if set -q _flag_right
     echo "$text$pad"
