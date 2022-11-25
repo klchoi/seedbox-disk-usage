@@ -20,6 +20,7 @@ function disk-usage
       echo
     end
   end
+  echo
 end
 
 function _disk-usage-pad
