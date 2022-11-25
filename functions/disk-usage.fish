@@ -10,7 +10,6 @@ function disk-usage
       set -l count
       if test "$dir" = total
         set count $count_sum
-        set -e dir
       else
         set count (countof $dir)
         set count_sum (math $count_sum + $count)
