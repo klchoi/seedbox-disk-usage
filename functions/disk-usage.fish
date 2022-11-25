@@ -4,6 +4,7 @@ function disk-usage
   for step in download upload
     set -l count_sum 0
     set -l dirs "$step"_dirs
+    echo
     echo $step | string upper | bold
     du -shc $$dirs | while read -l size dir
       set -l count
