@@ -6,7 +6,7 @@ function disk-usage
     set -l dirs "$step"_dirs
     echo
     echo $step | string upper | bold
-    du -shc $$dirs | while read -l size dir
+    _disk-usage $$dirs | while read -l size dir
       set -l count
       if test "$dir" = total
         set count $count_sum
@@ -27,6 +27,15 @@ function disk-usage
     end
   end
   echo
+end
+
+function _disk-usage
+  set -l dirs $argv
+  if test -z "$dirs"
+    echo 4.0KB total
+  else
+    du -shc $dirs
+  end
 end
 
 function _disk-usage-pad
