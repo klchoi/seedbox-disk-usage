@@ -18,8 +18,8 @@ function disk-usage
         echo -n (echo -n "$dir" | string replace -r '/([^/]+)$' /(bold '$1') | string replace -r '(.*/)' (dim '$1') | _disk-usage-pad -w40 -r -c.)
         echo -n (echo -n "$count" | yellow | _disk-usage-pad -w8 -c.)
         echo -n (echo -n "$size" | yellow | _disk-usage-pad -w10 -c.)
+        echo
       end
-      echo
     end
   end
   echo
